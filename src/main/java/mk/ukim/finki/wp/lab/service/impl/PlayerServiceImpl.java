@@ -3,6 +3,7 @@ package mk.ukim.finki.wp.lab.service.impl;
 import mk.ukim.finki.wp.lab.model.Player;
 import mk.ukim.finki.wp.lab.repository.PlayerRepository;
 import mk.ukim.finki.wp.lab.service.PlayerService;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 import java.util.Optional;

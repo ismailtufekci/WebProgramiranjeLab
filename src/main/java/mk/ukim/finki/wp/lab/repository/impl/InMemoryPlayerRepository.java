@@ -3,10 +3,11 @@ package mk.ukim.finki.wp.lab.repository.impl;
 import mk.ukim.finki.wp.lab.bootstrap.DataHolder;
 import mk.ukim.finki.wp.lab.model.Player;
 import mk.ukim.finki.wp.lab.repository.PlayerRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public class InMemoryPlayerRepository  implements PlayerRepository {
 
 

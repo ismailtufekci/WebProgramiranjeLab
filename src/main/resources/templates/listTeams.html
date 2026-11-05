@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Team Manager - Choose a Team</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to the Team Manager</h1>
+</header>
+<main>
+    <h2>Choose a team:</h2>
+    <form action="/players" method="GET">
+        <!-- Display radio buttons for each team,
+             the value should be the team id
+             and the displayed text should be:
+             Name: <name>, City: <city>, Players: <number of players> -->
+        <input type="radio" name="teamId" value="1"> Team 1 <br/>
+        <input type="radio" name="teamId" value="2"> Team 2 <br/>
+        <input type="radio" name="teamId" value="3"> Team 3 <br/>
+        <input type="submit" value="Submit">
+    </form>
+</main>
+</body>
+</html>
