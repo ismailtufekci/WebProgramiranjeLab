@@ -4,10 +4,11 @@ import mk.ukim.finki.wp.lab.model.Player;
 import mk.ukim.finki.wp.lab.repository.PlayerRepository;
 import mk.ukim.finki.wp.lab.service.PlayerService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class PlayerServiceImpl implements PlayerService {
     private final PlayerRepository playerRepository;
     public PlayerServiceImpl(PlayerRepository playerRepository){

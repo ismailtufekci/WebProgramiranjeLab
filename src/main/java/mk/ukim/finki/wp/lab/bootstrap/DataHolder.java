@@ -5,12 +5,14 @@ import mk.ukim.finki.wp.lab.model.Player;
 import mk.ukim.finki.wp.lab.model.Team;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class DataHolder {
-    public static List<Team> teams = null;
-    public static List<Player> players = null;
+    public static List<Team> teams = new ArrayList<>();
+    public static List<Player> players = new ArrayList<>();
+
 
     public DataHolder(){
 
