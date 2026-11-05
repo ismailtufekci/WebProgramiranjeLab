@@ -1,0 +1,24 @@
+package mk.ukim.finki.wp.lab.repository.impl;
+
+import mk.ukim.finki.wp.lab.bootstrap.DataHolder;
+import mk.ukim.finki.wp.lab.model.Player;
+import mk.ukim.finki.wp.lab.repository.PlayerRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public class InMemoryPlayerRepository  implements PlayerRepository {
+
+
+    @Override
+    public List<Player> findAll() {
+        return DataHolder.players;
+    }
+
+    @Override
+    public Optional<Player> findByPlayerId(String playerId) {
+
+        return DataHolder.players.stream().findAny().filter(player -> player.getPlayerId().equals(playerId));
+
+    }
+}

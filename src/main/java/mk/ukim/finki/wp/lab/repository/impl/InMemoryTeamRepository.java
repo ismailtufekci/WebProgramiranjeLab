@@ -1,0 +1,35 @@
+package mk.ukim.finki.wp.lab.repository.impl;
+
+import mk.ukim.finki.wp.lab.bootstrap.DataHolder;
+import mk.ukim.finki.wp.lab.model.Team;
+import mk.ukim.finki.wp.lab.repository.TeamRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public class InMemoryTeamRepository implements TeamRepository {
+
+    @Override
+    public List<Team> findAll() {
+        return DataHolder.teams;
+    }
+
+    @Override
+    public Optional<Team> findById(Long id) {
+        return DataHolder.teams.stream().filter(team -> team.getId().equals(id)).findFirst();
+    }
+
+    @Override
+    public Team save(Team team) {
+       Optional<Team>existingTeam=findById(team.getId());
+       if (existingTeam.isPresent()){
+           DataHolder.teams.remove(existingTeam.get());
+           DataHolder.teams.add(team);
+           return team;
+       }
+        DataHolder.teams.add(team);
+       return team;
+    }
+}
